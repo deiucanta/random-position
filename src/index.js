@@ -14,21 +14,21 @@ function between(a, b) {
 
   let result = ''
   let position = 0
-  let carry = 0
+  let carry = null
   let count = 0
 
   while (true) {
     let aindex = toNumber(a[position])
     let bindex = toNumber(b[position])
 
-    if (carry) bindex += base.length
+    if (carry !== null) bindex += base.length
 
     if (aindex === bindex) {
       result += a[position]
     }
 
     if (bindex - aindex === 1) {
-      if (carry === 0) {
+      if (carry === null) {
         carry = aindex
       } else {
         count++
@@ -38,7 +38,7 @@ function between(a, b) {
     if (bindex - aindex > 1) {
       const final = random(aindex + 1, bindex - 1)
 
-      if (carry) {
+      if (carry !== null) {
         result += final < base.length
           ? toString(carry) + toString(base.length - 1).repeat(count)
           : toString(carry + 1) + toString(0).repeat(count)

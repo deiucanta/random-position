@@ -22,3 +22,5 @@ tests.forEach(([a, b]) => {
     result > a && result < b
   ])
 })
+
+console.log(RandomPosition.before('!'))
