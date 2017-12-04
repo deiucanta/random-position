@@ -1,20 +1,4 @@
-var base = '0123456789'
-// var base = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-
-function random(a, b) {
-  var start = a
-  var distance = b - a
-
-  return Math.round(start + distance * Math.random())
-}
-
-function toNumber(x) {
-  return base.indexOf(x || base[0])
-}
-
-function toString(x) {
-  return base[x]
-}
+const base = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
 
 function between(a, b) {
   if (a === b) {
@@ -25,14 +9,14 @@ function between(a, b) {
     throw new Error('The numbers are not in the correct order')
   }
 
-  var result = ''
-  var position = 0
-  var carry = 0
-  var count = 0
+  let result = ''
+  let position = 0
+  let carry = 0
+  let count = 0
 
   while (true) {
-    var aindex = toNumber(a[position])
-    var bindex = toNumber(b[position])
+    let aindex = toNumber(a[position])
+    let bindex = toNumber(b[position])
 
     if (carry) bindex += base.length
 
@@ -68,16 +52,35 @@ function between(a, b) {
   return result
 }
 
+function random(a, b) {
+  const start = a
+  const distance = b - a
+
+  return Math.round(start + distance * Math.random())
+}
+
+function toNumber(x) {
+  return base.indexOf(x || base[0])
+}
+
 function before(x) {
-  return between(base[0], x)
+  return between(first(), x)
 }
 
 function after(x) {
-  return between(x, base[base.length - 1].repeat(64))
+  return between(x, last())
 }
 
-module.exports = {
-  between: between,
-  before: before,
-  after: after,
+function toString(x) {
+  return base[x]
 }
+
+function first() {
+  return base[0]
+}
+
+function last(count = 64) {
+  return base[base.length - 1].repeat(count)
+}
+
+module.exports = { between, before, after, first, last }

@@ -1,4 +1,4 @@
-var RandomPosition = require('./index')
+var RandomPosition = require('../dist/index')
 
 var tests = [
   ['1', '9'],

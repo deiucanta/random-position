@@ -2,9 +2,11 @@
   "name": "random-position",
   "version": "0.1.1",
   "description": "Generate random positions for ordered sequences",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
-    "test": "node tests"
+    "test": "node tests",
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/deiucanta/random-position/issues"
   },
-  "homepage": "https://github.com/deiucanta/random-position#readme"
+  "homepage": "https://github.com/deiucanta/random-position#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
 }
