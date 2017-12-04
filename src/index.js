@@ -36,15 +36,15 @@ function between(a, b) {
     }
 
     if (bindex - aindex > 1) {
-      var last = random(aindex + 1, bindex - 1)
+      const final = random(aindex + 1, bindex - 1)
 
       if (carry) {
-        result += last < base.length
+        result += final < base.length
           ? toString(carry) + toString(base.length - 1).repeat(count)
           : toString(carry + 1) + toString(0).repeat(count)
       }
 
-      result += toString(last % base.length)
+      result += toString(final % base.length)
 
       break
     }
