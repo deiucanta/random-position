@@ -3,7 +3,6 @@
   "version": "0.2.0",
   "description": "Generate random positions for ordered sequences",
   "main": "dist/index.js",
-  "module": "src/index.js",
   "scripts": {
     "test": "node tests",
     "build": "babel src -d dist"
