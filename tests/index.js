@@ -24,3 +24,4 @@ tests.forEach(([a, b]) => {
 })
 
 console.log(RandomPosition.before('!'))
+console.log(RandomPosition.before('   x'))

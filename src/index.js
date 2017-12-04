@@ -24,7 +24,7 @@ function between(a, b) {
     if (carry !== null) bindex += base.length
 
     if (aindex === bindex) {
-      result += a[position]
+      result += toString(aindex)
     }
 
     if (bindex - aindex === 1) {
