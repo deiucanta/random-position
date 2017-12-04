@@ -1,0 +1,27 @@
+{
+  "name": "random-position",
+  "version": "0.1.1",
+  "description": "Generate random positions for ordered sequences",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deiucanta/random-position.git"
+  },
+  "keywords": [
+    "random",
+    "position",
+    "sortable",
+    "ordered",
+    "sequences",
+    "lexicographical"
+  ],
+  "author": "Andrei Canta <deiucanta@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deiucanta/random-position/issues"
+  },
+  "homepage": "https://github.com/deiucanta/random-position#readme"
+}
