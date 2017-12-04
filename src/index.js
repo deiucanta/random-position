@@ -1,6 +1,9 @@
 const base = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
 
 function between(a, b) {
+  a = a || first()
+  b = b || last()
+
   if (a === b) {
     throw new Error('The numbers must be different')
   }
@@ -64,11 +67,11 @@ function toNumber(x) {
 }
 
 function before(x) {
-  return between(first(), x)
+  return between(undefined, x)
 }
 
 function after(x) {
-  return between(x, last())
+  return between(x, undefined)
 }
 
 function toString(x) {
