@@ -40,11 +40,12 @@ RandomPosition.before('98723412')
 
 ## Todo
 
-- [ ] add mocha
+- [x] add mocha and better tests
 - [ ] add examples (react + firebase)
 
 ## Change Log
 
+**0.3.0** (2017-12-05) **—** improved before/after
 **0.1.0** (2017-12-04) **—** initial release
 
 ## Contributing
