@@ -1,8 +1,8 @@
 const base = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
 
 function between(a, b) {
-  a = a || first()
-  b = b || last()
+  if (a === undefined) return before(b)
+  if (b === undefined) return after(a)
 
   if (a === b) {
     throw new Error('The numbers must be different')
@@ -55,17 +55,6 @@ function between(a, b) {
   return result
 }
 
-function random(a, b) {
-  const start = a
-  const distance = b - a
-
-  return Math.round(start + distance * Math.random())
-}
-
-function toNumber(x) {
-  return base.indexOf(x || base[0])
-}
-
 function before(x) {
   let result = ''
   let position = 0
@@ -113,6 +102,21 @@ function after(x) {
   return result
 }
 
+/**
+ * Utilities
+ */
+
+function random(a, b) {
+  const start = a
+  const distance = b - a
+
+  return Math.round(start + distance * Math.random())
+}
+
+function toNumber(x) {
+  return base.indexOf(x || base[0])
+}
+
 function toString(x) {
   return base[x]
 }
@@ -124,5 +128,9 @@ function first() {
 function last(count = 64) {
   return base[base.length - 1].repeat(count)
 }
+
+/**
+ * Exports
+ */
 
 module.exports = { between, before, after, first, last }
