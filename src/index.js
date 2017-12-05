@@ -67,11 +67,50 @@ function toNumber(x) {
 }
 
 function before(x) {
-  return between(undefined, x)
+  let result = ''
+  let position = 0
+
+  while (true) {
+    let xindex = toNumber(x[position])
+
+    if (xindex === 0) {
+      result += toString(xindex)
+    }
+
+    if (xindex === 1) {
+      result += toString(0) + toString(base.length - 1)
+      break
+    }
+
+    if (xindex > 1) {
+      result += toString(xindex - 1)
+      break
+    }
+
+    position++
+  }
+
+  return result
 }
 
 function after(x) {
-  return between(x, undefined)
+  let result = ''
+  let position = 0
+
+  while (true) {
+    let xindex = toNumber(x[position])
+
+    if (xindex === base.length - 1) {
+      result += toString(xindex)
+    } else {
+      result += toString(xindex + 1)
+      break
+    }
+
+    position++
+  }
+
+  return result
 }
 
 function toString(x) {
