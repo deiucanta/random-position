@@ -1,6 +1,6 @@
 {
   "name": "random-position",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Generate random positions for ordered sequences",
   "main": "dist/index.js",
   "scripts": {
